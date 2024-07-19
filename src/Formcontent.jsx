@@ -65,7 +65,22 @@ function Formcontent() {
     };
     try {
       //   console.log(file);
-      if (file) {
+      if (file && textareadata.trim() != "") {
+        toast.error("Please choose one option 📁 or ✍️", {
+          position: "top-left",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          // theme: "dark",
+          transition: Bounce,
+        });
+        setconvertstate(true);
+        return;
+      }
+      if (file && textareadata === "") {
         setconvertstate(false);
         const reader = new FileReader();
         const textPromise = new Promise((resolve, reject) => {
