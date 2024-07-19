@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/avinashraj-151.github.io/csv_to_json_react/static/css/main.5e858143.css",
+    "main.js": "/avinashraj-151.github.io/csv_to_json_react/static/js/main.f78c5a7f.js",
+    "static/js/453.847d915c.chunk.js": "/avinashraj-151.github.io/csv_to_json_react/static/js/453.847d915c.chunk.js",
+    "static/media/or.png": "/avinashraj-151.github.io/csv_to_json_react/static/media/or.9ef060c9bdfee3595490.png",
+    "static/media/logo.svg": "/avinashraj-151.github.io/csv_to_json_react/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/avinashraj-151.github.io/csv_to_json_react/index.html",
+    "main.5e858143.css.map": "/avinashraj-151.github.io/csv_to_json_react/static/css/main.5e858143.css.map",
+    "main.f78c5a7f.js.map": "/avinashraj-151.github.io/csv_to_json_react/static/js/main.f78c5a7f.js.map",
+    "453.847d915c.chunk.js.map": "/avinashraj-151.github.io/csv_to_json_react/static/js/453.847d915c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5e858143.css",
+    "static/js/main.f78c5a7f.js"
+  ]
+}
