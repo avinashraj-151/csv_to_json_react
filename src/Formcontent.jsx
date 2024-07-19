@@ -101,7 +101,7 @@ function Formcontent() {
             let data = parsedData.data;
             let length = data.length;
             // console.log(parsedData.data[0]);
-            const headline = Object.keys(data[0]);
+            const headline = Object.keys(data[length - 2]);
             //here i need to give the check it is exist or not
             // console.log(headline);
             if (inputcolumnumber >= headline.length) {
@@ -201,7 +201,18 @@ function Formcontent() {
         // console.log("Please upload a file or enter data in textarea");
       }
     } catch (error) {
-      console.error("Error reading file", error);
+      // console.error("Error reading file", error);
+      toast.error("Error reading file. File is not in correct format", {
+        position: "top-left",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        // theme: "dark",
+        transition: Bounce,
+      });
     }
   }
   function copyclipboard() {
