@@ -48,8 +48,195 @@ function Formcontent() {
       return false;
     }
   }
+  // async function handelConvert() {
+  //   console.log("yes enter");
+  //   const successfullyconvert = () => {
+  //     toast.success("Conversion Successful!", {
+  //       position: "top-left",
+  //       autoClose: 2000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       // theme: "dark",
+  //       transition: Bounce,
+  //     });
+  //   };
+  //   try {
+  //     console.log(file);
+  //     if (file && textareadata.trim() != "") {
+  //       toast.error("Please choose one option 📁 or ✍️", {
+  //         position: "top-left",
+  //         autoClose: 2000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         progress: undefined,
+  //         // theme: "dark",
+  //         transition: Bounce,
+  //       });
+  //       setconvertstate(true);
+  //       return;
+  //     }
+  //     if (file && textareadata === "") {
+  //       setconvertstate(false);
+  //       const reader = new FileReader();
+  //       const textPromise = new Promise((resolve, reject) => {
+  //         reader.onload = (e) => {
+  //           resolve(e.target.result);
+  //         };
+  //         reader.onerror = (e) => reject(e);
+  //         reader.readAsText(file);
+  //       });
+
+  //       const text = await textPromise;
+  //       if (inputcolumnumber != "") {
+  //         console.log("starting......");
+  //         const parsedData = papa.parse(text, {
+  //           header: true, // Assume headers are present
+  //           complete: (results) => {},
+  //         });
+  //         if (parsedData) {
+  //           let data = parsedData.data;
+  //           let length = data.length;
+  //           // console.log(parsedData.data[0]);
+  //           const headline = Object.keys(data[length - 2]);
+  //           //here i need to give the check it is exist or not
+  //           // console.log(headline);
+  //           if (inputcolumnumber >= headline.length) {
+  //             toast.error("Invalid Column Number!", {
+  //               position: "top-left",
+  //               autoClose: 2000,
+  //               hideProgressBar: false,
+  //               closeOnClick: true,
+  //               pauseOnHover: true,
+  //               draggable: true,
+  //               progress: undefined,
+  //               // theme: "dark",
+  //               transition: Bounce,
+  //             });
+  //             setconvertstate(true);
+  //             return;
+  //           }
+  //           let jsondatacoll = [];
+  //           for (let i = 0; i < length - 1; i++) {
+  //             const check = data[i][headline[inputcolumnumber]];
+  //             //   console.log(check);
+  //             if (isJSONString(check)) {
+  //               console.log("yes");
+  //               jsondatacoll.push(JSON.parse(check));
+  //             } else if (!isJSONString(check)) {
+  //               jsondatacoll.push({
+  //                 [headline[inputcolumnumber]]: check,
+  //               });
+  //             }
+  //           }
+  //           // console.log(jsondatacoll);
+  //           if (jsondatacoll.length) {
+  //             let jsondatacollString = jsondatacoll
+  //               .map((x) => {
+  //                 return JSON.stringify(x)
+  //                   .replaceAll("\\n", "")
+  //                   .replaceAll("\\", "");
+  //               })
+  //               .join("\n");
+  //             setjsonfiledata(jsondatacollString);
+  //             setconvertstate(true);
+  //             successfullyconvert();
+  //           }
+  //         }
+  //         console.log("ending ----------");
+  //       } else {
+  //         // console.log("else part mai aayagaya hu");
+  //         const parsedData = await papa.parse(text, {
+  //           header: true, // Assume headers are present
+  //           complete: (results) => {
+  //             results.data.pop();
+  //             var obj = results.data
+  //               .map((x) => {
+  //                 return JSON.stringify(x)
+  //                   .replaceAll("\\n", "")
+  //                   .replaceAll("\\", "");
+  //               })
+  //               .join("\n");
+
+  //             setjsonfiledata(obj);
+  //             setconvertstate(true);
+  //             successfullyconvert();
+  //           },
+  //         });
+  //         if (parsedData) {
+  //           // console.log("yaha par aaya gaya hu");
+  //           // successfullyconvert();
+  //           // toast.success("Conversion Successful!", {
+  //           //   position: "top-left",
+  //           //   autoClose: 2000,
+  //           //   hideProgressBar: false,
+  //           //   closeOnClick: true,
+  //           //   pauseOnHover: true,
+  //           //   draggable: true,
+  //           //   progress: undefined,
+  //           //   // theme: "dark",
+  //           //   transition: Bounce,
+  //           // });
+  //         }
+  //       }
+  //     } else if (textareadata.trim() != "") {
+  //       // console.log("hmm bhai esmai hai ");
+  //       setconvertstate(false);
+  //       const parsedData = papa.parse(textareadata, {
+  //         header: true, // Assume headers are present
+  //         complete: (results) => {
+  //           // var obj = JSON.stringify(results.data, undefined, 4);
+  //           var obj = results.data
+  //             .map((x) => {
+  //               return JSON.stringify(x)
+  //                 .replaceAll("\\n", "")
+  //                 .replaceAll("\\", "");
+  //             })
+  //             .join("\n");
+
+  //           setjsonfiledata(obj);
+  //           setconvertstate(true);
+  //           successfullyconvert();
+  //         },
+  //       });
+  //     } else {
+  //       // 📁 Upload a file or ✍️enter data.
+  //       toast.error("📁 Upload a file or ✍️enter data", {
+  //         position: "top-left",
+  //         autoClose: 2000,
+  //         hideProgressBar: false,
+  //         closeOnClick: true,
+  //         pauseOnHover: true,
+  //         draggable: true,
+  //         progress: undefined,
+  //         // theme: "dark",
+  //         transition: Bounce,
+  //       });
+  //       // console.log("Please upload a file or enter data in textarea");
+  //     }
+  //     console.log("existing out of the function");
+  //   } catch (error) {
+  //     // console.error("Error reading file", error);
+  //     toast.error("Error reading file. File is not in correct format", {
+  //       position: "top-left",
+  //       autoClose: 2000,
+  //       hideProgressBar: false,
+  //       closeOnClick: true,
+  //       pauseOnHover: true,
+  //       draggable: true,
+  //       progress: undefined,
+  //       // theme: "dark",
+  //       transition: Bounce,
+  //     });
+  //   }
+  // }
   async function handelConvert() {
     // console.log("yes enter");
+
     const successfullyconvert = () => {
       toast.success("Conversion Successful!", {
         position: "top-left",
@@ -59,12 +246,12 @@ function Formcontent() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        // theme: "dark",
         transition: Bounce,
       });
     };
+
     try {
-      //   console.log(file);
+      // console.log(file);
       if (file && textareadata.trim() != "") {
         toast.error("Please choose one option 📁 or ✍️", {
           position: "top-left",
@@ -74,36 +261,35 @@ function Formcontent() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          // theme: "dark",
           transition: Bounce,
         });
         setconvertstate(true);
         return;
       }
+
       if (file && textareadata === "") {
         setconvertstate(false);
         const reader = new FileReader();
         const textPromise = new Promise((resolve, reject) => {
-          reader.onload = (e) => {
-            resolve(e.target.result);
+          reader.onload = (e) => resolve(e.target.result);
+          reader.onerror = (e) => {
+            console.log(e);
+            reject(e);
           };
-          reader.onerror = (e) => reject(e);
           reader.readAsText(file);
         });
 
         const text = await textPromise;
-        if (inputcolumnumber) {
+        if (inputcolumnumber != "") {
           const parsedData = papa.parse(text, {
-            header: true, // Assume headers are present
+            header: true,
             complete: (results) => {},
           });
-          if (parsedData) {
+          if (parsedData.data) {
             let data = parsedData.data;
             let length = data.length;
-            // console.log(parsedData.data[0]);
             const headline = Object.keys(data[length - 2]);
-            //here i need to give the check it is exist or not
-            // console.log(headline);
+
             if (inputcolumnumber >= headline.length) {
               toast.error("Invalid Column Number!", {
                 position: "top-left",
@@ -113,26 +299,24 @@ function Formcontent() {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                // theme: "dark",
                 transition: Bounce,
               });
               setconvertstate(true);
               return;
             }
+
             let jsondatacoll = [];
             for (let i = 0; i < length - 1; i++) {
               const check = data[i][headline[inputcolumnumber]];
-              //   console.log(check);
               if (isJSONString(check)) {
-                // console.log("yes");
                 jsondatacoll.push(JSON.parse(check));
-              } else if (!isJSONString(check)) {
+              } else {
                 jsondatacoll.push({
                   [headline[inputcolumnumber]]: check,
                 });
               }
             }
-            // console.log(jsondatacoll);
+
             if (jsondatacoll.length) {
               let jsondatacollString = jsondatacoll
                 .map((x) => {
@@ -149,6 +333,7 @@ function Formcontent() {
         } else {
           const parsedData = papa.parse(text, {
             header: true, // Assume headers are present
+            // step: (row) => {},
             complete: (results) => {
               results.data.pop();
               var obj = results.data
@@ -158,20 +343,47 @@ function Formcontent() {
                     .replaceAll("\\", "");
                 })
                 .join("\n");
-
               setjsonfiledata(obj);
               setconvertstate(true);
-              successfullyconvert();
+              if (obj.length) {
+                successfullyconvert();
+              } else {
+                toast.error("No data found to convert", {
+                  position: "top-left",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  transition: Bounce,
+                });
+              }
+            },
+            error: (Error) => {
+              console.error("Error parsing CSV file", Error);
+              toast.error(
+                "Error parsing CSV file. File is not in correct format",
+                {
+                  position: "top-left",
+                  autoClose: 2000,
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                  progress: undefined,
+                  transition: Bounce,
+                }
+              );
+              setconvertstate(true);
             },
           });
         }
       } else if (textareadata.trim() != "") {
-        // console.log("hmm bhai esmai hai ");
         setconvertstate(false);
         const parsedData = papa.parse(textareadata, {
-          header: true, // Assume headers are present
+          header: true,
           complete: (results) => {
-            // var obj = JSON.stringify(results.data, undefined, 4);
             var obj = results.data
               .map((x) => {
                 return JSON.stringify(x)
@@ -179,14 +391,13 @@ function Formcontent() {
                   .replaceAll("\\", "");
               })
               .join("\n");
-
+            // console.log(obj);
             setjsonfiledata(obj);
             setconvertstate(true);
             successfullyconvert();
           },
         });
       } else {
-        // 📁 Upload a file or ✍️enter data.
         toast.error("📁 Upload a file or ✍️enter data", {
           position: "top-left",
           autoClose: 2000,
@@ -195,13 +406,12 @@ function Formcontent() {
           pauseOnHover: true,
           draggable: true,
           progress: undefined,
-          // theme: "dark",
           transition: Bounce,
         });
-        // console.log("Please upload a file or enter data in textarea");
       }
+
+      // console.log("existing out of the function");
     } catch (error) {
-      // console.error("Error reading file", error);
       toast.error("Error reading file. File is not in correct format", {
         position: "top-left",
         autoClose: 2000,
@@ -210,9 +420,9 @@ function Formcontent() {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        // theme: "dark",
         transition: Bounce,
       });
+      // console.error("Error reading file", error);
     }
   }
   function copyclipboard() {
